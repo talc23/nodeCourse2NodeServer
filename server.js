@@ -23,7 +23,7 @@ app.use((req, res, next)  => {
 })
 
 app.use((req, res, next)  => {
-  if ((req.method === 'GET') && ((req.url==='/home') || (req.url==='/about')|| (req.url==='/')))
+  if ((req.method === 'GET') && ((req.url==='/home') || (req.url==='/about')|| (req.url==='/')|| (req.url==='/projects')))
   {
     next()
   }
@@ -51,6 +51,12 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
   res.render('about.hbs', {
     pageTitle: 'About Page'
+  })
+})
+
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Portfolio Page'
   })
 })
 
